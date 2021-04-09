@@ -49,7 +49,6 @@ public class GeneralServiceImpl implements GeneralService {
       .collect(toMap((x) -> x.split(delimiter)[0], Portfolio::new, Portfolio::merge, TreeMap::new));
     operations = Files.lines(Paths.get(inputFileOrders))
       .filter(x -> x.split(delimiter).length == 5)
-      .filter(x -> x.split(delimiter).length == 5)
       .collect(toList());
     logger.info("Read data finished... Received " + portfolios.size() + " clients!");
   }
