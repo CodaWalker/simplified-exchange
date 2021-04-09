@@ -84,7 +84,7 @@ public class GeneralServiceImpl implements GeneralService {
       int newCount = countSecureForOperation - count;
       portfolio.setCountSecurity(nameSecurity, newCount);
       } else {
-      logger.warn("Не достаточно ценных бумаг!");
+      logger.warn("Not enough security!");
       }
     } else if (typeOperation == TypeOperation.BAY) {
       int needMoney = count * priceOfOneSecurity;
@@ -93,7 +93,7 @@ public class GeneralServiceImpl implements GeneralService {
       int restOfMoneyBalance = portfolio.getBalance() - needMoney;
       portfolio.setCountSecurityAndBalance(nameSecurity, newCount, restOfMoneyBalance);
       } else {
-        logger.warn("Не достаточно денег!");
+        logger.warn("Not enough money!");
       }
     } else {
       logger.warn("Not found operation!");
